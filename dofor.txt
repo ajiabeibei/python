@@ -6,4 +6,4 @@ git commit -m <message>
 git status
 git deff <file>
 
-over 1.2
+simple ver 1.2
