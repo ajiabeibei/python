@@ -1,0 +1,233 @@
+&deg;##输入输出
+- input
+- print
+
+print("{0} not is {1}".format(a,b)) #a not is b
+
+
+
+##数学运算
+- abs divmod pow
+- max min sum
+- bin     oct     hex#接受一个十进制数返回2,8,18 进制数
+- rounnd
+
+'''
+    float(3)
+    
+    float(".23")  #0.23
+    
+    complex(2,3) #2+3j
+    
+    complex("3+4j") #3+4j
+    
+    chr(64)  # Unicode 64-> '@'
+    
+    ord("@")  # Unicode '@'-> 64
+    
+    ord("啊") #21834
+    
+    ascii("啊") #返回ascii码值'\\u554a'
+'''
+
+##类型转换
+- bool
+int
+float
+str
+
+>bool("0") #True
+
+>str(1+2) # '3'
+
+>str("1+2=12") #"1+2=12"
+
+>repr("1+2=12") # "'1+2=12'"  和str的区别
+
+>str(int) # "<class 'int'\>"
+
+
+-**tuple
+list
+dict
+set**
+range（可迭代对象包含字符串，序列，range类）
+
+'''
+
+    tuple((90,)) #返回一个元素的元组(90,)
+    
+    tuple(range(9))#传入可迭代对象,使用其元素创建新的序列
+    
+    list("python") #传入可迭代对象,使用其元素创建新的序列
+    
+    list({1,2，1，4})    #传入可迭代对象,使用其元素创建新的序列
+    
+    dict([(1,2),(3,4)])  #传入可迭代对象,使用其元素创建新的序列
+    
+    dict(a = 1,b = 2)#传入键值对,创建新的字典
+    
+    set("wer\rr")  #{'\r', 'r', 'e', 'w'}#传入可迭代对象,使用其元素创建新的序列
+    
+    set(r"wer\r")  #{'\\', 'r', 'e', 'w'}
+    
+    range(3,-3,-1) #返回一个range对象range(3,-3,-1)
+    
+    - len 接受一个序列或集合返回它元素的个数
+    
+    - iter 传入一个可迭代对象(iterable)返回一个iterator  迭代器可是可迭代对象，可以用next()方法，可迭代对象不行
+    
+    iter(range(1,5))
+    
+    iter("1234")
+    
+    iter(1234) #报错 1234 not iterable
+'''
+
+- slice 返回一个切片类对象 & slice(1,9,3)
+
+- super
+
+> 1. 对于subclass中的调用父类的方法 super().funca_name()
+
+> 2. 对于super调用父类中的__init__方法 super(父类名,self).\__init__(*args)
+
+- object
+>用于创建一个object类对象  & a = object()
+
+
+- bytearray
+byte
+memoryview
+
+---
+##序列操作
+- all
+any
+>传入一个可迭代对象，对于all每个item为真则返回True,对于any有一个item为真则返回True
+
+>all("12340") #True    bool("0")->True
+
+>all([]) # True
+
+>any([]) # False
+
+- fliter/map
+
+> 使用指定方法[过滤/输出]可迭代对象的元素
+> filter(方法，可迭代对象)
+
+- zip 创建映射关系返回一个zip可迭代对象（iterable）
+
+- next 返回迭代器（iterator）对象的下一个元素 
+
+> a = iter"abcd"
+
+> next(a) # "a"
+
+> next(a) # "b"
+
+- reversed
+
+> 反转列表，返回生成一个迭代器（iterator）
+
+> a = reverse(range(2,5))
+
+> next(a)  # 4
+
+- reverse
+
+>
+```
+bin = [12,3,23,-6]
+bin.reverse()
+print(bin) # [-6,23,3,12]
+
+print(sorted(bin)) #[-6,3,12,23]
+
+```
+
+- sorted 对可迭代对象进行排序，生成一个列表
+
+##文件操作
+- open
+> - with open("file.path","r+") as f:
+
+##对象操作
+- help 帮助文档
+- dir 列出对象属性
+- type
+
+> 返回一个对象的类名
+
+> 创建一个新类
+
+
+- vars 相当于__dict__ 返回对象所有的属性
+
+- id 返回对象在内存中的唯一标示符
+
+> a is b 为真，则 id(a)==id(b)
+
+- hash 返回对象的hash值
+
+
+- ascii
+
+- format
+
+>"xxx{:#<+10.2f}xxx".format(math.pi)  #xxx+3.14#####xxx :格式符，#填充符号，<,^, 左中右对齐，长度.小数位，类型
+
+>format(120,"b")  #转换120 为2进制 1111000
+
+>format(120,"x")  #转换120 为16进制 78
+
+>format(31.415926,"0.3e") #转换科学计数法
+
+---
+##反射操作
+- \__import__ 动态导入模块
+
+> shuxue = \__import__("math")
+
+>shuxue.pi  # 3.14159265
+
+- issubclass
+
+> A(B):  A继承自B
+
+> issubclass(A,B)  # True
+
+- isinstance 判断类是否是另外一个类或者类型元组中任意类元素的子类
+
+> b = (B):  b 是 B类的实例对象
+
+> isinstance(b,(B,A))  # True
+
+- hasattr 检查对象是否含有属性
+- getattr 获取属性值 调用对象或类的\__getter__方法
+- setarrr 设置属性
+- delattr 删除属性
+
+- callable 判断属性是否可用
+
+##变量操作
+- globals 返回当前作用域内的全局变量和其值组成的字典
+
+- locals
+
+##编译操作
+- compile 编译对象
+- eval
+> -将一个字符串转换为一个表达式
+- exec
+> -动态执行语句（字符串形式）
+- repr 返回对象的字符串表达形式 对象内部由\__repr__方法，可以直接调用不用repr方法
+##装饰器
+
+- property
+> -属性修饰符
+- classmethod
+> -类方法修饰符 @classmethod修饰一个方法时，方法第一个参数是cls而不是self
+- staticmehtod
+> -静态方法修饰符 @staticmethod修饰一个方法时，方法第一个参数不需要表示自身或类
