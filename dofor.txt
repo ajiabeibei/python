@@ -5,5 +5,8 @@ git add <file>
 git commit -m <message>
 git status
 git deff <file>
+git checkout 
+git branch
+git checkout -b
 
 simple ver 1.2
