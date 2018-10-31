@@ -1,0 +1,46 @@
+##第一阶段##
+ - 基础语法
+    - 数据类型
+    - 输入输出、内置函数
+    - 条件、循环
+    - 函数、递归、迭代
+    - 异常、文件
+    - 面向对象
+        - 继承、装饰器
+    - 线程、协程
+ - 字符串解析
+    - 字符串常用方法
+ - 时间和日历
+    - time模块
+ - 文件操作、数据处理
+    - json、pickle、shelve
+ - GUI编程
+    - Tkinter
+ - 命名空间和作用域案例分析
+##第二阶段
+ - 处理txt、csv、pdf、jsons文件
+ - Anconda虚拟环境操作
+ - 常用第三方库
+ - mail编程
+ - 正则、re
+ - 网络编程
+    - http协议
+ - 系统编程
+ - pyGame
+ - Office数据办公
+ - 数据库开发
+    - mysql 
+ - jpython简介
+##第三阶段
+ - htmp-html5
+    - css3
+ - JavaScript
+    - json 
+    - JQuerry
+    - Ajax
+ - 简单爬虫
+    - urllib/requests
+##第四阶段
+ - git代码管理
+ - Django框架
+ - Flash框架 
