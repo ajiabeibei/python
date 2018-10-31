@@ -9,4 +9,6 @@ git checkout
 git branch
 git checkout -b
 
+git push origin master
+
 simple ver 1.2
