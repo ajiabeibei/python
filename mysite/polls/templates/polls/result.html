@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>polls主页</title>
+	<meta charset="utf-8">
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'polls/divbk.css'%}">
+</head>
+<body>
+<div>
+	<h1>{{question.question_text}}</h1>
+
+	{%for chioce in question.choice_set.all %}
+	<ul>
+		<li>{{ chioce.chioce_text }} -- {{ chioce.votes }} -vote- {{ chioce.votes|pluralize }}</li>
+		
+	</ul>
+	{% endfor %}
+
+	<a href="{% url 'polls:detail' question.id %}">Vote again</a>&nbsp;&nbsp;
+	
+	<a href="{% url 'polls:index' %}">back home</a>&nbsp;&nbsp;
+	<a style="float: right;"href="{% url 'polls:clean' question.id %}">Vote clean</a>
+</div>
+</body>
+</html>

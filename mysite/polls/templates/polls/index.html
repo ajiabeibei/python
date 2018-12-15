@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>polls主页</title>
+	<meta charset="utf-8">
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'polls/divbk.css'%}">
+</head>
+<body>
+<div>
+	
+{% if latest_question_list %}
+	{%for question in latest_question_list %}
+	<ul>
+		<li>
+			<a href="{% url 'polls:detail' question.id %}">
+			<!-- <a href="/polls/{{que.id}}">   指定url的命名空间取代不方便书写的//-->
+			{{ question.question_text }}</a></li>
+		<!-- 哪里来的id, 数据库库中为每个字段创建primary_id 默认从1 开始，而不是list的检索序号 -->
+	</ul>
+	{% endfor%}
+	{% else %}
+		<p> 没有polls可以用</p>
+{%endif%}
+
+</div>
+</body>
+</html>

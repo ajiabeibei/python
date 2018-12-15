@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>polls主页</title>
+	<meta charset="utf-8">
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'polls/divbk.css'%}">
+</head>
+<body>
+<div>
+	<h1>{{question.question_text}}</h1>
+	<!-- {% for choice in question.choice_set.all %}
+	<ul>
+		<li>{{choice.choice_text}}</li>
+	</ul>
+	{% endfor %} -->
+
+	{%if error_message%} <p><strong> {{error_message}} </strong></p> {%endif%}
+
+	<form action="{% url 'polls:vote' question.id %}" method="post">
+		{% csrf_token %}  
+		<!-- 防止cross site request forgeries 恶意攻击
+		forloop.counter 表示循环了多少次
+		可以使用question.choice_set.all表示全部所选择的值 -->
+
+		{% for choice in question.choice_set.all %}
+		<label>   
+			<input type="radio" name="choice" id="choice{{forloop.counter}}" value="{{choice.id}}"> {{choice.choice_text}}    
+
+		</label>
+		<br>
+
+		{% endfor %}
+
+		<input type="submit" value="Vote">
+	</form>
+	<br>
+	<a href="{% url 'polls:result' question.id %}">look result</a>
+		
+
+</div>
+</body>
+</html>
